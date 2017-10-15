@@ -11,7 +11,9 @@ class CardComponent extends Component {
       title: '',
       open: false,
       imgSrc: '../assets/img/hotel.JPG',
+      currentEventIndex: 0,
     };
+    this.nextEvent = this.nextEvent.bind(this);
   }
 
   componentWillMount() {
@@ -31,6 +33,16 @@ class CardComponent extends Component {
       })
   }
 
+  nextEvent() {
+    let nextIndex;
+    if(this.state.currentEventIndex >= this.state.events.length) {
+      nextIndex = 0;
+    } else {
+      nextIndex = this.state.currentEventIndex + 1;
+    }
+    this.setState({currentEventIndex: nextIndex})
+  }
+
   render() {
     if (this.state.events.length) {
       return <div>
@@ -38,17 +50,20 @@ class CardComponent extends Component {
           <div className="col-md-12">
             <div className="card">
               <div className="card__title">
-                <h1>{this.state.events[0].name}</h1>
+                <h1>{this.state.events[this.state.currentEventIndex].name}</h1>
               </div>
               <div className="card__body">
                 <article>
-                  <p>{this.state.events[0].content}</p>
+                  <p>{this.state.events[this.state.currentEventIndex].content}</p>
                   <Panel collapsible expanded={this.state.open}>
                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
                     Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                   </Panel>
                   <Button onClick={() => this.setState({open: !this.state.open})}>
                     Czytaj więcej
+                  </Button>
+                  <Button onClick={this.nextEvent}>
+                    Kolejne wydarzenie
                   </Button>
                 </article>
               </div>
