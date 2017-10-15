@@ -20,23 +20,28 @@
     button {
       float:right;
       margin-top: 20px;
+      margin-bottom: 40px;
       background-color: transparent;
       border: none;
       font-weight: 600;
       color: #fff;
       &:hover {
         background-color: transparent;
+        color: #fff;
       }
       &:focus {
         outline: none;
+        color: #fff;
         background-color: transparent;
       }
       &:active {
+        color: #fff;
         outline: none;
         background-color: transparent;
         border: none;
         box-shadow: none;
         &:hover {
+          color: #fff;
           outline: none;
           background-color: transparent;
         }

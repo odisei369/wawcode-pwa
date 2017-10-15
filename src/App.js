@@ -15,7 +15,7 @@ class App extends Component {
     };
 
     return (
-      <div>
+      <div className="app">
         <div className="page__background" style={imageStyle}>
         </div>
         <section className="page-content">

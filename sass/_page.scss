@@ -10,7 +10,7 @@
 
 .page__background {
   position: absolute;
-  //background-image: url('../img/hotel.JPG');
+  z-index: -5;
   top: 0;
   left: 0;
   width: 100%;
