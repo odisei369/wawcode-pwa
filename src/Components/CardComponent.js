@@ -5,29 +5,36 @@ class CardComponent extends Component {
   constructor () {
     super();
     this.state = {
-      title: '',
-      description: '',
+      events: [],
     };
   }
 
   componentWillMount () {
-    axios.get('url')
-      .then(response => {
-        // We set the latest prices in the state to the prices gotten from Cryptocurrency.
-        this.setState({ title: response.title });
-        this.setState({ description: response.description });
+    fetch('http://localhost:8001/today')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        responseJson.forEach((event) => {
+          this.state.events.push(
+            {name: event.name, content: event.content}
+          )
+        });
+          this.setState({events: this.state.events});
       })
-      // Catch any error here
       .catch(error => {
-        console.log(error)
+        console.log(error);
       })
   }
 
   render() {
-    return <div className="container">
-      <h1>{this.state.title}</h1>
-      <h2>{this.state.description}</h2>
-    </div>
+    if(!this.state.events.length) {
+      return <div></div>
+    } else {
+      console.log(this.state.events[0]);
+      return <div className="container">
+        <h1>{this.state.events[0].name}</h1>
+        <h2>{this.state.events[0].content}</h2>
+      </div>
+    }
   }
 }
 
