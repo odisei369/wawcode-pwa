@@ -25,7 +25,7 @@ class ChatComponent extends Component {
 
   componentWillMount() {
 
-    this.conn = new WebSocket('ws://localhost:8080');
+    this.conn = new WebSocket('ws://159.89.15.164:8080');
     this.conn.component = this;
     this.conn.onopen = function(e) {
       console.log("Connection established succesfully");

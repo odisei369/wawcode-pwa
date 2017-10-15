@@ -15,7 +15,7 @@ class CardComponent extends Component {
   }
 
   componentWillMount() {
-    fetch('http://localhost:8001/today')
+    fetch('http://159.89.15.164:8000/today')
       .then((response) => response.json())
       .then((responseJson) => {
         responseJson.forEach((event) => {
