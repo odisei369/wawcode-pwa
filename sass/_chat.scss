@@ -1,0 +1,24 @@
+.chat {
+  text-align: right;
+  &__item {
+    padding: 10px 22px;
+    padding-right: 10px;
+    background-color: rgba(0, 0, 0, 0.54);
+    > p {
+      color: #fff;
+      margin-bottom: 5px;
+      padding-right: 12px;
+      font-weight: 600;
+    }
+    > span {
+      border-radius: 10px;
+      color: #fff;
+      display: inline-block;
+      padding: 12px;
+      background-color: rgba(15, 125, 185, 0.54);
+      max-width: 200px;
+      width: 100%;
+      word-wrap: break-word;
+    }
+  }
+}

@@ -425,6 +425,11 @@ html, body {
   display: table-cell;
 }
 
+/* line 14, ../../../sass/_global.scss */
+.app {
+  position: relative;
+}
+
 /* line 1, ../../../sass/_navigation.scss */
 .navbar {
   background-color: #000;
@@ -462,15 +467,26 @@ h2 {
 
 /* line 1, ../../../sass/_page.scss */
 .page-content {
-  background-image: url("../img/bc.jpeg");
   min-height: 100vh;
   background-size: cover;
 }
-/* line 5, ../../../sass/_page.scss */
+/* line 4, ../../../sass/_page.scss */
 .page-content__date {
   margin-top: 20px;
   font-size: 66px;
   color: #fff;
+}
+
+/* line 11, ../../../sass/_page.scss */
+.page__background {
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(10px) grayscale(50%);
+  background-size: cover;
 }
 
 /* line 1, ../../../sass/_card.scss */
@@ -479,47 +495,64 @@ h2 {
   margin-top: 40px;
   margin-bottom: 40px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.54);
 }
 /* line 7, ../../../sass/_card.scss */
+.card__image {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 12, ../../../sass/_card.scss */
+.card__image > img {
+  max-width: 100%;
+}
+/* line 16, ../../../sass/_card.scss */
 .card__body {
   text-align: center;
   overflow-y: auto;
 }
-/* line 11, ../../../sass/_card.scss */
+/* line 20, ../../../sass/_card.scss */
 .card__body button {
   float: right;
   margin-top: 20px;
+  margin-bottom: 40px;
   background-color: transparent;
   border: none;
-  color: #000;
+  font-weight: 600;
+  color: #fff;
 }
-/* line 17, ../../../sass/_card.scss */
+/* line 28, ../../../sass/_card.scss */
 .card__body button:hover {
   background-color: transparent;
+  color: #fff;
 }
-/* line 20, ../../../sass/_card.scss */
+/* line 32, ../../../sass/_card.scss */
 .card__body button:focus {
   outline: none;
+  color: #fff;
   background-color: transparent;
 }
-/* line 24, ../../../sass/_card.scss */
+/* line 37, ../../../sass/_card.scss */
 .card__body button:active {
+  color: #fff;
   outline: none;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
-/* line 29, ../../../sass/_card.scss */
+/* line 43, ../../../sass/_card.scss */
 .card__body button:active:hover {
+  color: #fff;
   outline: none;
   background-color: transparent;
 }
-/* line 35, ../../../sass/_card.scss */
+/* line 50, ../../../sass/_card.scss */
 .card__body p {
   max-height: 60px;
 }
-/* line 39, ../../../sass/_card.scss */
+/* line 54, ../../../sass/_card.scss */
 .card__title {
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -535,4 +568,44 @@ h2 {
 /* line 6, ../../../sass/_panel.scss */
 .panel .panel-body {
   padding: 0;
+}
+
+/* line 1, ../../../sass/_form.scss */
+form {
+  margin-top: 40px;
+}
+/* line 3, ../../../sass/_form.scss */
+form label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* line 1, ../../../sass/_chat.scss */
+.chat {
+  text-align: right;
+}
+/* line 3, ../../../sass/_chat.scss */
+.chat__item {
+  padding: 10px 22px;
+  padding-right: 10px;
+  background-color: rgba(0, 0, 0, 0.54);
+}
+/* line 7, ../../../sass/_chat.scss */
+.chat__item > p {
+  color: #fff;
+  margin-bottom: 5px;
+  padding-right: 12px;
+  font-weight: 600;
+}
+/* line 13, ../../../sass/_chat.scss */
+.chat__item > span {
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  padding: 12px;
+  background-color: rgba(15, 125, 185, 0.54);
+  max-width: 200px;
+  width: 100%;
+  word-wrap: break-word;
 }

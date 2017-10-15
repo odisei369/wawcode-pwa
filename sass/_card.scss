@@ -3,7 +3,16 @@
   margin-top: 40px;
   margin-bottom: 40px;
   color: #fff;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.54);
+  &__image {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    >img {
+      max-width: 100%;
+    }
+  }
   &__body {
     text-align: center;
     overflow-y: auto;
@@ -11,22 +20,28 @@
     button {
       float:right;
       margin-top: 20px;
+      margin-bottom: 40px;
       background-color: transparent;
       border: none;
-      color: #000;
+      font-weight: 600;
+      color: #fff;
       &:hover {
         background-color: transparent;
+        color: #fff;
       }
       &:focus {
         outline: none;
+        color: #fff;
         background-color: transparent;
       }
       &:active {
+        color: #fff;
         outline: none;
         background-color: transparent;
         border: none;
         box-shadow: none;
         &:hover {
+          color: #fff;
           outline: none;
           background-color: transparent;
         }
