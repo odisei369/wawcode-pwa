@@ -25,7 +25,8 @@ class App extends Component {
               content: event.content,
               day: event.day,
               month: event.month,
-              year: event.year
+              year: event.year,
+              imgSrc : event.image_url,
             }
           )
         });

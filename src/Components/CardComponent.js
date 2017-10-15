@@ -3,7 +3,10 @@ import axios from 'axios';
 import {Button, Panel} from "react-bootstrap";
 
 class CardComponent extends Component {
-
+constructor(){
+  super();
+  this.nextEvent = this.nextEvent.bind(this);
+}
   nextEvent() {
     let nextIndex = this.state.currentEventIndex + 1;
     if(nextIndex >= this.state.events.length) {
@@ -41,6 +44,7 @@ class CardComponent extends Component {
                 </Button>
             </div>
           </div>
+        </div>
         </div>
       </div>
     } else {
