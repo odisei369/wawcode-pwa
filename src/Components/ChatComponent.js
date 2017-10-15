@@ -23,17 +23,24 @@ class ChatComponent extends Component {
     this.conn.send(JSON.stringify(clientInformation));
   }
 
-  componentWillMount() {
+  componentDidMount() {
 
-    this.conn = new WebSocket(`ws://159.89.15.164:8080/${this.props.id}`);
+      console.log("aa" + this.props.id);
+    this.conn = new WebSocket(`ws://159.89.15.164:8080`);
     this.conn.component = this;
-    this.conn.onopen = function(e) {
+    this.conn.onopen = function (e) {
       console.log("Connection established succesfully");
     };
 
     this.conn.onmessage = function (e) {
       var data = JSON.parse(e.data);
-      this.component.setState({messages: this.component.state.messages.concat([{user: data.user, message: data.message, date: data.date}])});
+      this.component.setState({
+        messages: this.component.state.messages.concat([{
+          user: data.user,
+          message: data.message,
+          date: data.date
+        }])
+      });
       console.log(this.component.state.messages);
     };
 
@@ -41,7 +48,6 @@ class ChatComponent extends Component {
       console.warn("Error: something went wrong with the socket.");
       console.error(e);
     };
-
 
     fetch(`${process.env.API_SERVER}/messages`)
         .then(response => {
@@ -64,6 +70,7 @@ class ChatComponent extends Component {
 
 
   render() {
+    console.log(this.props.id);
     const listMessages = this.state.messages.map((post) =>
       <MessageComponent message={post.message} user={post.user} date={post.date} />);
 
