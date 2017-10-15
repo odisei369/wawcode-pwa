@@ -10,7 +10,6 @@ class CardComponent extends Component {
       description: '',
       title: '',
       open: false,
-      imgSrc: '../assets/img/hotel.JPG',
     };
   }
 
@@ -54,7 +53,7 @@ class CardComponent extends Component {
               </div>
               <div className="card__image">
                 <img
-                  src="https://upload.waikimedia.org/wikipedia/commons/thumb/3/3c/Hotel_Bristol_2011.JPG/240px-Hotel_Bristol_2011.JPG"/>
+                  src={this.state.events[0]}/>
               </div>
             </div>
           </div>

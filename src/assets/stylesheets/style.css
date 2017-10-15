@@ -479,13 +479,13 @@ h2 {
 
 /* line 11, ../../../sass/_page.scss */
 .page__background {
-  position: absolute;
+  position: fixed;
   z-index: -5;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  filter: blur(10px) grayscale(50%);
+  filter: blur(10px) brightness(50%);
   background-size: cover;
 }
 
@@ -517,7 +517,7 @@ h2 {
 .card__body button {
   float: right;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   background-color: transparent;
   border: none;
   font-weight: 600;
@@ -579,6 +579,10 @@ form label {
   font-weight: 600;
   margin-bottom: 10px;
   color: #fff;
+}
+/* line 8, ../../../sass/_form.scss */
+form button {
+  float: right;
 }
 
 /* line 1, ../../../sass/_chat.scss */
