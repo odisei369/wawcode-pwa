@@ -6,7 +6,7 @@ class ChatComponent extends Component {
   constructor() {
     super();
     this.state = {
-      messages: [],
+      messages: [{user: 'Karol', message: 'fwafwaf', date: '20.10.2009'}],
       message: '',
       name: ''
     };
