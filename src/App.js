@@ -11,19 +11,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">History</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav pullRight className="custom-nav">
-            <NavItem>Date</NavItem>
-          </Nav>
-        </Navbar>
         <section className="page-content">
-          <CardComponent/>
-          <ChatComponent/>
+          <div className="container">
+            <h1>20.09.1933</h1>
+            <CardComponent/>
+            <ChatComponent/>
+          </div>
         </section>
       </div>
     );

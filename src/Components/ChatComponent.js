@@ -46,17 +46,17 @@ class ChatComponent extends Component {
 
 
   render() {
-    return <div className="container">
+    return <div>
       <form>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="email" class="form-control" id="name" placeholder="Jan Kowalski"/>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input type="email" className="form-control" id="name" placeholder="Jan Kowalski"/>
         </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea class="form-control" id="meassage" rows="3"></textarea>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea className="form-control" id="meassage" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" className="btn btn-primary">Send</button>
       </form>
     </div>
   }
