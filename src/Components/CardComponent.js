@@ -13,8 +13,10 @@ constructor(){
     if(nextIndex >= this.props.events.length) {
       nextIndex = 0;
     }
+    this.props.func(nextIndex);
     this.setState({currentEventIndex: nextIndex})
   }
+
 
   render() {
     console.log(this.props.events);
