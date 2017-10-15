@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 
 class ChatComponent extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       messages: [],
     };
   }
-  componentWillMount () {
+
+  componentWillMount() {
 
 
     fetch(`${process.env.API_SERVER}/messages`)
-      .then(response => {})
-      .catch(error => {
-        console.log(error)
-      })
+        .then(response => {
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    this.webSocket();
+  }
+
+  webSocket = () => {
+    const conn = new WebSocket('ws://localhost:8080');
+
+    conn.onopen = function(e) {
+      console.info("Connection established succesfully");
+    };
+
+    conn.onmessage = function (e) {
+      var data = JSON.parse(e.data);
+      Chat.appendMessage(data.username, data.message, data.date);
+    };
+
+    conn.onerror = function (e) {
+      alert("Error: something went wrong with the socket.");
+      console.error(e);
+    };
   }
 
 
