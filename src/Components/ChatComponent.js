@@ -8,6 +8,11 @@ class ChatComponent extends Component {
       messages: [],
     };
   }
+  sendMessage(text) {
+    clientInformation.message = text;
+    clientInformation.date = new Date().toLocaleString();
+    conn.send(JSON.stringify(clientInformation));
+  }
 
   componentWillMount() {
 
@@ -17,7 +22,7 @@ class ChatComponent extends Component {
         })
         .catch(error => {
           console.log(error)
-        })
+        });
     this.webSocket();
   }
 
@@ -25,12 +30,12 @@ class ChatComponent extends Component {
     const conn = new WebSocket('ws://localhost:8080');
 
     conn.onopen = function(e) {
-      console.info("Connection established succesfully");
+      console.log("Connection established succesfully");
     };
 
     conn.onmessage = function (e) {
       var data = JSON.parse(e.data);
-      Chat.appendMessage(data.username, data.message, data.date);
+      this.state.messages.push({user: data.username, message: data.message, date: data.date});
     };
 
     conn.onerror = function (e) {
