@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 
 class CardComponent extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       events: [],
+      description: 'Phasellus quis turpis eu sapien suscipit mollis. Vivamus ornare laoreet felis, tempor suscipit leo',
+      title: 'bitwa wartszawa'
     };
   }
 
-  componentWillMount () {
+  componentWillMount() {
     fetch('http://localhost:8001/today')
       .then((response) => response.json())
       .then((responseJson) => {
@@ -18,7 +20,7 @@ class CardComponent extends Component {
             {name: event.name, content: event.content}
           )
         });
-          this.setState({events: this.state.events});
+        this.setState({events: this.state.events});
       })
       // Catch any error here
       .catch(error => {
@@ -27,27 +29,29 @@ class CardComponent extends Component {
   }
 
   render() {
-    if(!this.state.events.length) {
-      return <div className="container">
+    if (!this.state.events.length) {
+      return <div>
         <div className="row">
           <div className="col-md-12">
             <div className="card">
-              <div className="card-title">
-                <h1></h1>
+              <div className="card__title">
+                <h1>{this.state.title}</h1>
               </div>
               <div className="card-body">
-                <h2></h2>
+                <article>
+                  <p>{this.state.description}</p>
+                </article>
               </div>
             </div>
           </div>
         </div>
       </div>
     } else {
-      return <div className="container">
+      return <div>
         <div className="row">
           <div className="col-md-12">
             <div className="card">
-              <div className="card-title">
+              <div className="card__title">
                 <h1>{this.state.events[0].name}</h1>
               </div>
               <div className="card-body">

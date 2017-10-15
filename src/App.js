@@ -13,7 +13,7 @@ class App extends Component {
       <div>
         <section className="page-content">
           <div className="container">
-            <h1>20.09.1933</h1>
+            <h1 className="page-content__date">20.09.1933</h1>
             <CardComponent/>
             <ChatComponent/>
           </div>
