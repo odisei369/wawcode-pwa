@@ -5,8 +5,8 @@ class CardComponent extends Component {
   constructor () {
     super();
     this.state = {
-      title: '',
-      description: '',
+      title: 'example title',
+      description: 'example discription',
     };
   }
 
@@ -25,8 +25,18 @@ class CardComponent extends Component {
 
   render() {
     return <div className="container">
-      <h1>{this.state.title}</h1>
-      <h2>{this.state.description}</h2>
+      <div className="row">
+        <div className="col-md-12">
+          <div className="card">
+            <div className="card-title">
+              <h1>{this.state.title}</h1>
+            </div>
+            <div className="card-body">
+              <h2>{this.state.description}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   }
 }
