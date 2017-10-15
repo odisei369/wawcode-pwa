@@ -57,6 +57,7 @@ class ChatComponent extends Component {
         });
   }
   handleSubmit(event){
+    event.preventDefault();
     this.sendMessage(this.state.message, this.state.name);
     this.setState({name: ''});
     this.setState({message: ''});
