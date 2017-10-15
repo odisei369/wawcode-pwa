@@ -9,7 +9,6 @@ class CardComponent extends Component {
       events: [],
       description: '',
       title: '',
-      open: false,
     };
   }
 
@@ -19,7 +18,13 @@ class CardComponent extends Component {
       .then((responseJson) => {
         responseJson.forEach((event) => {
           this.state.events.push(
-            {name: event.name, content: event.content}
+            {
+              name: event.name,
+              content: event.content,
+              day: event.day,
+              month: event.month,
+              year: event.year
+            }
           )
         });
         this.setState({events: this.state.events});
@@ -30,10 +35,16 @@ class CardComponent extends Component {
       })
   }
 
+
   render() {
+    console.log(this.state.events);
     if (this.state.events.length) {
       return <div>
         <div className="row">
+          <h1 className="page-content__date">
+            <span>Dzisiejszego dnia w roku: </span>
+            <span>{this.state.events[0].year}</span>
+          </h1>
           <div className="col-md-12">
             <div className="card">
               <div className="card__title">
@@ -42,13 +53,6 @@ class CardComponent extends Component {
               <div className="card__body">
                 <article>
                   <p>{this.state.events[0].content}</p>
-                  <Panel collapsible expanded={this.state.open}>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                  </Panel>
-                  <Button onClick={() => this.setState({open: !this.state.open})}>
-                    Czytaj więcej
-                  </Button>
                 </article>
               </div>
               <div className="card__image">
