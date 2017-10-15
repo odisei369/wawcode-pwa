@@ -1,7 +1,10 @@
 ## Instruction
 
 Development
-
+- git clone https://github.com/Sikora00/WawCodeCrawler
+- cd WawCodeCrawler
+- composer install
+- php bin/console sockets:start
 - configure environment
 - npm install
 - npm start
