@@ -54,7 +54,7 @@ class CardComponent extends Component {
         <div className="row">
           <h1 className="page-content__date">
             <span>Dzisiejszego dnia w roku: </span>
-            <span>{this.state.events[0].year}</span>
+            <span>{this.state.events[this.state.currentEventIndex].year}</span>
           </h1>
           <div className="col-md-12">
             <div className="card">
@@ -63,7 +63,6 @@ class CardComponent extends Component {
               </div>
               <div className="card__body">
                 <article>
-                  <p>{this.state.events[0].content}</p>
                   <p>{this.state.events[this.state.currentEventIndex].content}</p>
                   <Button onClick={this.nextEvent}>
                     Kolejne wydarzenie
