@@ -16,7 +16,7 @@ class App extends Component {
     };
   }
   throwToApp(numb){
-    this.setState({index: this.state.events[numb].chat.id});
+    this.setState({index: this.state.events[numb].chat});
   }
   componentWillMount() {
     fetch('http://159.89.15.164:8000/today')
@@ -34,8 +34,7 @@ class App extends Component {
             }
           )
         });
-        this.setState({events: this.state.events, index: responseJson[0].chat.id});
-        console.log("!!" + this.state.index);
+        this.setState({events: this.state.events});
       })
       // Catch any error here
       .catch(error => {
@@ -54,7 +53,7 @@ class App extends Component {
         </div>
         <section className="page-content">
           <div className="container">
-            <CardComponent events={this.state.events} func={this.throwToApp}/>
+            <CardComponent events={this.state.events}/>
             <ChatComponent id={this.state.index}/>
           </div>
         </section>
