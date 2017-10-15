@@ -4,6 +4,13 @@ import {Button, Panel} from "react-bootstrap";
 
 class CardComponent extends Component {
 
+  nextEvent() {
+    let nextIndex = this.state.currentEventIndex + 1;
+    if(nextIndex >= this.state.events.length) {
+      nextIndex = 0;
+    }
+    this.setState({currentEventIndex: nextIndex})
+  }
 
   render() {
     console.log(this.props.events);
@@ -28,6 +35,10 @@ class CardComponent extends Component {
                 <img
                   src={this.props.events[0]}/>
               </div>
+              <div className="card__action-bar">
+                <Button onClick={this.nextEvent} className="btn btn-primary">
+                  Kolejne wydarzenie
+                </Button>
             </div>
           </div>
         </div>
