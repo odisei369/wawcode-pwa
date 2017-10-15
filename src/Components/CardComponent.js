@@ -5,11 +5,12 @@ import {Button, Panel} from "react-bootstrap";
 class CardComponent extends Component {
 constructor(){
   super();
+  this.state = {currentEventIndex: 0};
   this.nextEvent = this.nextEvent.bind(this);
 }
   nextEvent() {
     let nextIndex = this.state.currentEventIndex + 1;
-    if(nextIndex >= this.state.events.length) {
+    if(nextIndex >= this.props.events.length) {
       nextIndex = 0;
     }
     this.setState({currentEventIndex: nextIndex})
@@ -22,21 +23,21 @@ constructor(){
         <div className="row">
           <h1 className="page-content__date">
             <span>Dzisiejszego dnia w roku: </span>
-            <span>{this.props.events[0].year}</span>
+            <span>{this.props.events[this.state.currentEventIndex].year}</span>
           </h1>
           <div className="col-md-12">
             <div className="card">
               <div className="card__title">
-                <h1>{this.props.events[0].name}</h1>
+                <h1>{this.props.events[this.state.currentEventIndex].name}</h1>
               </div>
               <div className="card__body">
                 <article>
-                  <p>{this.props.events[0].content}</p>
+                  <p>{this.props.events[this.state.currentEventIndex].content}</p>
                 </article>
               </div>
               <div className="card__image">
                 <img
-                  src={this.props.events[0]}/>
+                  src={this.props.events[this.state.currentEventIndex].imgSrc}/>
               </div>
               <div className="card__action-bar">
                 <Button onClick={this.nextEvent} className="btn btn-primary">

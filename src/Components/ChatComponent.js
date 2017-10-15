@@ -38,7 +38,7 @@ class ChatComponent extends Component {
     };
 
     this.conn.onerror = function (e) {
-      alert("Error: something went wrong with the socket.");
+      console.warn("Error: something went wrong with the socket.");
       console.error(e);
     };
 
