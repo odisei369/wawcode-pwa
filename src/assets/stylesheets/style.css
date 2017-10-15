@@ -605,7 +605,7 @@ form label {
   color: #fff;
 }
 /* line 8, ../../../sass/_form.scss */
-form button {
+form button[type='submit'] {
   float: right;
   transition: all .15s ease-in-out;
   margin-bottom: 40px;
