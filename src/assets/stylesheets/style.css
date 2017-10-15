@@ -473,11 +473,23 @@ h2 {
 /* line 4, ../../../sass/_page.scss */
 .page-content__date {
   margin-top: 20px;
-  font-size: 66px;
+  font-size: 60px;
   color: #fff;
 }
+/* line 9, ../../../sass/_page.scss */
+.page-content__date span:first-of-type {
+  font-size: 24px;
+  display: inline-block;
+  width: 100%;
+}
+/* line 14, ../../../sass/_page.scss */
+.page-content__date span:last-of-type {
+  font-size: 110px;
+  display: inline-block;
+  width: 100%;
+}
 
-/* line 11, ../../../sass/_page.scss */
+/* line 24, ../../../sass/_page.scss */
 .page__background {
   position: fixed;
   z-index: -5;
@@ -583,6 +595,7 @@ form label {
 /* line 8, ../../../sass/_form.scss */
 form button {
   float: right;
+  transition: all .15s ease-in-out;
 }
 
 /* line 1, ../../../sass/_chat.scss */
