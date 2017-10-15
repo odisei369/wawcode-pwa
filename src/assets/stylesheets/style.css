@@ -1,0 +1,45 @@
+/* line 1, ../../../sass/_navigation.scss */
+.navbar {
+  background-color: #000;
+  margin-bottom: 0;
+  border-radius: 0;
+  border: none;
+}
+
+/* line 8, ../../../sass/_navigation.scss */
+.navbar-item {
+  color: #fff;
+}
+
+/* line 15, ../../../sass/_navigation.scss */
+.navbar-nav.custom-nav li a {
+  color: #fff;
+}
+
+/* line 25, ../../../sass/_navigation.scss */
+.results--section {
+  padding: 20px 0px;
+  margin-top: 40px;
+}
+
+/* line 30, ../../../sass/_navigation.scss */
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+/* line 35, ../../../sass/_navigation.scss */
+h2 {
+  text-align: center;
+}
+
+/* line 1, ../../../sass/_page.scss */
+.page-content {
+  background-image: url("../img/background.png");
+  min-height: calc(100vh - 50px);
+}
+
+/* line 1, ../../../sass/_card.scss */
+.card {
+  background-color: #fff;
+}

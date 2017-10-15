@@ -20,21 +20,27 @@ class CardComponent extends Component {
         });
           this.setState({events: this.state.events});
       })
+      // Catch any error here
       .catch(error => {
-        console.log(error);
+        console.log(error)
       })
   }
 
   render() {
-    if(!this.state.events.length) {
-      return <div></div>
-    } else {
-      console.log(this.state.events[0]);
-      return <div className="container">
-        <h1>{this.state.events[0].name}</h1>
-        <h2>{this.state.events[0].content}</h2>
+    return <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="card">
+            <div className="card-title">
+              <h1>{this.state.events[0].name}</h1>
+            </div>
+            <div className="card-body">
+              <h2>{this.state.events[0].content}</h2>
+            </div>
+          </div>
+        </div>
       </div>
-    }
+    </div>
   }
 }
 
