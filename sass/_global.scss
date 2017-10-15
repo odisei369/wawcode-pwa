@@ -2,3 +2,11 @@ html, body {
   font-family: 'PT Sans', sans-serif;
   box-sizing: border-box;
 }
+
+.group {
+  &::after {
+    clear: both;
+    content: '';
+    display: table-cell;
+  }
+}
