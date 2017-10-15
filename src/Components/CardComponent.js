@@ -9,7 +9,11 @@ class CardComponent extends Component {
       events: [],
       description: '',
       title: '',
+      open: false,
+      imgSrc: '../assets/img/hotel.JPG',
+      currentEventIndex: 0,
     };
+    this.nextEvent = this.nextEvent.bind(this);
   }
 
   componentWillMount() {
@@ -35,6 +39,13 @@ class CardComponent extends Component {
       })
   }
 
+  nextEvent() {
+    let nextIndex = this.state.currentEventIndex + 1;
+    if(nextIndex >= this.state.events.length) {
+      nextIndex = 0;
+    }
+    this.setState({currentEventIndex: nextIndex})
+  }
 
   render() {
     console.log(this.state.events);
@@ -48,11 +59,15 @@ class CardComponent extends Component {
           <div className="col-md-12">
             <div className="card">
               <div className="card__title">
-                <h1>{this.state.events[0].name}</h1>
+                <h1>{this.state.events[this.state.currentEventIndex].name}</h1>
               </div>
               <div className="card__body">
                 <article>
                   <p>{this.state.events[0].content}</p>
+                  <p>{this.state.events[this.state.currentEventIndex].content}</p>
+                  <Button onClick={this.nextEvent}>
+                    Kolejne wydarzenie
+                  </Button>
                 </article>
               </div>
               <div className="card__image">
