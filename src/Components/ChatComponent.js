@@ -11,15 +11,8 @@ class ChatComponent extends Component {
   componentWillMount () {
 
 
-    axios.get('http://localhost:8000/month-day/1/1', { crossdomain: true })
-    //.then(response => response.json())
-    //.then(data => console.log(data))
-    // We set the latest prices in the state to the prices gotten from Cryptocurrency.
-    // this.setState({ name: response.name });
-    // this.setState({ content: response.content });
-    // this.setState({ year: response.year });
-
-    // Catch any error here
+    fetch(`${process.env.API_SERVER}/messages`)
+      .then(response => {})
       .catch(error => {
         console.log(error)
       })
