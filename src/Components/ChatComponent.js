@@ -6,7 +6,7 @@ class ChatComponent extends Component {
   constructor() {
     super();
     this.state = {
-      messages: [{user: 'Karol', message: 'fwafwaf', date: '20.10.2009'}],
+      messages: [],
       message: '',
       name: ''
     };
@@ -19,13 +19,13 @@ class ChatComponent extends Component {
   sendMessage(text, user) {
     clientInformation.message = text;
     clientInformation.date = new Date().toLocaleString();
-    clientInformation.user= user;
+    clientInformation.user = user;
     this.conn.send(JSON.stringify(clientInformation));
   }
 
   componentDidMount() {
 
-      console.log("aa" + this.props.id);
+    console.log("aa" + this.props.id);
     this.conn = new WebSocket(`ws://159.89.15.164:8080`);
     this.conn.component = this;
     this.conn.onopen = function (e) {
@@ -62,9 +62,11 @@ class ChatComponent extends Component {
     this.setState({message: ''});
     return false;
   }
+
   handleChangeName(event) {
     this.setState({name: event.target.value});
   }
+
   handleChangeMessage(event) {
     this.setState({message: event.target.value});
   }
@@ -73,7 +75,7 @@ class ChatComponent extends Component {
   render() {
     console.log(this.props.id);
     const listMessages = this.state.messages.map((post) =>
-      <MessageComponent message={post.message} user={post.user} date={post.date} />);
+      <MessageComponent message={post.message} user={post.user} date={post.date}/>);
 
     return <div>
       <div>
@@ -82,7 +84,8 @@ class ChatComponent extends Component {
       <form onSubmit={this.handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
-          <input type="name" className="form-control" id="name" placeholder="Jan Kowalski" onChange={this.handleChangeName}/>
+          <input type="name" className="form-control" id="name" placeholder="Jan Kowalski"
+                 onChange={this.handleChangeName}/>
         </div>
         <div className="form-group">
           <label htmlFor="message">Wiadomość</label>

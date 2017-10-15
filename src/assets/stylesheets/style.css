@@ -639,3 +639,8 @@ form button[type='submit'] {
   width: 100%;
   word-wrap: break-word;
 }
+/* line 22, ../../../sass/_chat.scss */
+.chat__item > span > span {
+  font-size: 9px;
+  color: #e3e3e3;
+}

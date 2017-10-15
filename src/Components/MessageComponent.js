@@ -10,8 +10,10 @@ class MessageComponent extends Component {
       <div className="row chat">
         <div className="col-md-12">
           <div className="chat__item">
-            <p className="text-muted">{this.props.user} - {this.props.date}</p>
-            <span>{this.props.message}</span>
+            <p className="text-muted">{this.props.user}</p>
+            <span>{this.props.message}<br/>
+            <span>{this.props.date}</span>
+            </span>
           </div>
         </div>
       </div>
