@@ -77,10 +77,10 @@ class ChatComponent extends Component {
           <input type="name" className="form-control" id="name" placeholder="Jan Kowalski" onChange={this.handleChangeName}/>
         </div>
         <div className="form-group">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">Wiadomość</label>
           <textarea className="form-control" id="meassage" rows="3" onChange={this.handleChangeMessage}></textarea>
         </div>
-        <button type="submit" className="btn btn-primary">Send</button>
+        <button type="submit" className="btn btn-primary">Wyślij</button>
       </form>
     </div>
   }
