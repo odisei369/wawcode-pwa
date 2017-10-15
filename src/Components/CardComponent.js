@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 
 class CardComponent extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       title: 'example title',
-      description: 'example discription',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl augue, sodales et sem ac, faucibus bibendum turpis. Aliquam maximus tellus in sollicitudin tempor. Suspendisse potenti. Mauris condimentum faucibus est at mollis. Duis eleifend aliquet accumsan. Sed efficitur eget nisl eget dapibus. Vivamus fringilla lorem sed ex pretium feugiat.',
     };
   }
 
-  componentWillMount () {
+  componentWillMount() {
     axios.get('url')
       .then(response => {
         // We set the latest prices in the state to the prices gotten from Cryptocurrency.
-        this.setState({ title: response.title });
-        this.setState({ description: response.description });
+        this.setState({title: response.title});
+        this.setState({description: response.description});
       })
       // Catch any error here
       .catch(error => {
@@ -24,15 +24,17 @@ class CardComponent extends Component {
   }
 
   render() {
-    return <div className="container">
+    return <div>
       <div className="row">
         <div className="col-md-12">
           <div className="card">
             <div className="card-title">
-              <h1>{this.state.title}</h1>
+              <h2>{this.state.title}</h2>
             </div>
-            <div className="card-body">
-              <h2>{this.state.description}</h2>
+            <div className="card__body">
+              <article>
+                <p>{this.state.description}</p>
+              </article>
             </div>
           </div>
         </div>
