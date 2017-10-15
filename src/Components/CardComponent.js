@@ -69,7 +69,11 @@ class CardComponent extends Component {
                 <h1>{this.state.events[0].name}</h1>
               </div>
               <div className="card__body">
-                <h2>{this.state.events[0].content}</h2>
+                <article>
+                  <p>
+                    {this.state.events[0].content}
+                  </p>
+                </article>
               </div>
             </div>
           </div>
