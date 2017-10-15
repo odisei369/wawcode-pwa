@@ -34,11 +34,9 @@ class CardComponent extends Component {
   }
 
   nextEvent() {
-    let nextIndex;
-    if(this.state.currentEventIndex >= this.state.events.length) {
+    let nextIndex = this.state.currentEventIndex + 1;
+    if(nextIndex >= this.state.events.length) {
       nextIndex = 0;
-    } else {
-      nextIndex = this.state.currentEventIndex + 1;
     }
     this.setState({currentEventIndex: nextIndex})
   }
