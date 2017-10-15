@@ -11,7 +11,7 @@ class ChatComponent extends Component {
   sendMessage(text) {
     clientInformation.message = text;
     clientInformation.date = new Date().toLocaleString();
-    conn.send(JSON.stringify(clientInformation));
+    //conn.send(JSON.stringify(clientInformation));
   }
 
   componentWillMount() {
