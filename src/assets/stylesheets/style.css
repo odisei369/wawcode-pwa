@@ -419,7 +419,7 @@ html, body {
 }
 
 /* line 7, ../../../sass/_global.scss */
-.group::after, .card__body::after {
+.group::after, .card::after {
   clear: both;
   content: '';
   display: table-cell;
@@ -509,25 +509,24 @@ h2 {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.54);
 }
-/* line 7, ../../../sass/_card.scss */
+/* line 8, ../../../sass/_card.scss */
 .card__image {
   max-width: 350px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
-/* line 12, ../../../sass/_card.scss */
+/* line 13, ../../../sass/_card.scss */
 .card__image > img {
   max-width: 100%;
 }
-/* line 16, ../../../sass/_card.scss */
+/* line 17, ../../../sass/_card.scss */
 .card__body {
   text-align: center;
-  overflow-y: auto;
+  margin-bottom: 20px;
 }
 /* line 20, ../../../sass/_card.scss */
 .card__body button {
-  float: right;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: transparent;
@@ -535,18 +534,18 @@ h2 {
   font-weight: 600;
   color: #fff;
 }
-/* line 28, ../../../sass/_card.scss */
+/* line 27, ../../../sass/_card.scss */
 .card__body button:hover {
   background-color: transparent;
   color: #fff;
 }
-/* line 32, ../../../sass/_card.scss */
+/* line 31, ../../../sass/_card.scss */
 .card__body button:focus {
   outline: none;
   color: #fff;
   background-color: transparent;
 }
-/* line 37, ../../../sass/_card.scss */
+/* line 36, ../../../sass/_card.scss */
 .card__body button:active {
   color: #fff;
   outline: none;
@@ -554,20 +553,33 @@ h2 {
   border: none;
   box-shadow: none;
 }
-/* line 43, ../../../sass/_card.scss */
+/* line 42, ../../../sass/_card.scss */
 .card__body button:active:hover {
   color: #fff;
   outline: none;
   background-color: transparent;
 }
-/* line 50, ../../../sass/_card.scss */
+/* line 49, ../../../sass/_card.scss */
 .card__body p {
   max-height: 60px;
 }
-/* line 54, ../../../sass/_card.scss */
+/* line 53, ../../../sass/_card.scss */
 .card__title {
   text-transform: uppercase;
   margin-bottom: 10px;
+}
+/* line 57, ../../../sass/_card.scss */
+.card > button {
+  float: right;
+}
+/* line 60, ../../../sass/_card.scss */
+.card__action-bar {
+  text-align: right;
+  margin-top: 20px;
+}
+/* line 63, ../../../sass/_card.scss */
+.card__action-bar > button {
+  transition: all .15s ease-in-out;
 }
 
 /* line 1, ../../../sass/_panel.scss */
@@ -596,6 +608,7 @@ form label {
 form button {
   float: right;
   transition: all .15s ease-in-out;
+  margin-bottom: 40px;
 }
 
 /* line 1, ../../../sass/_chat.scss */

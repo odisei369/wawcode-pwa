@@ -27,7 +27,8 @@ class CardComponent extends Component {
               content: event.content,
               day: event.day,
               month: event.month,
-              year: event.year
+              year: event.year,
+              imgSrc : event.image_url,
             }
           )
         });
@@ -64,14 +65,16 @@ class CardComponent extends Component {
               <div className="card__body">
                 <article>
                   <p>{this.state.events[this.state.currentEventIndex].content}</p>
-                  <Button onClick={this.nextEvent}>
-                    Kolejne wydarzenie
-                  </Button>
                 </article>
               </div>
               <div className="card__image">
                 <img
-                  src={this.state.events[0]}/>
+                  src={this.state.events[this.state.currentEventIndex].imgSrc}/>
+              </div>
+              <div className="card__action-bar">
+                <Button onClick={this.nextEvent} className="btn btn-primary">
+                  Kolejne wydarzenie
+                </Button>
               </div>
             </div>
           </div>
