@@ -10,6 +10,7 @@ class CardComponent extends Component {
       description: 'Phasellus quis turpis eu sapien suscipit mollis. Vivamus ornare laoreet felis, tempor suscipit leo',
       title: 'bitwa wartszawa',
       open: false,
+      imgSrc: '../assets/img/hotel.JPG',
     };
   }
 
@@ -50,6 +51,10 @@ class CardComponent extends Component {
                     Czytaj więcej
                   </Button>
                 </article>
+              </div>
+              <div className="card__image">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Hotel_Bristol_2011.JPG/240px-Hotel_Bristol_2011.JPG"/>
               </div>
             </div>
           </div>

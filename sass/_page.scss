@@ -1,5 +1,4 @@
 .page-content {
-  background-image: url('../img/bc.jpeg');
   min-height: 100vh;
   background-size: cover;
   &__date {
@@ -7,4 +6,15 @@
     font-size: 66px;
     color: #fff;
   }
+}
+
+.page__background {
+  position: absolute;
+  //background-image: url('../img/hotel.JPG');
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(10px) grayscale(50%);
+  background-size: cover;
 }

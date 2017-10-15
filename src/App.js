@@ -8,9 +8,16 @@ import ChatComponent from "./Components/ChatComponent";
 import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
 
 class App extends Component {
+
   render() {
+    const imageStyle = {
+      backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Hotel_Bristol_2011.JPG/240px-Hotel_Bristol_2011.JPG')",
+    };
+
     return (
       <div>
+        <div className="page__background" style={imageStyle}>
+        </div>
         <section className="page-content">
           <div className="container">
             <h1 className="page-content__date">20.09.1933</h1>

@@ -68,7 +68,7 @@ class ChatComponent extends Component {
       <MessageComponent message={post.message} user={post.user} date={post.date} />);
 
     return <div>
-      <div className="container">
+      <div>
         {listMessages}
       </div>
       <form onSubmit={this.handleSubmit}>
