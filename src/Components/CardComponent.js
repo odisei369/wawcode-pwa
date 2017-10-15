@@ -27,20 +27,37 @@ class CardComponent extends Component {
   }
 
   render() {
-    return <div className="container">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="card">
-            <div className="card-title">
-              <h1>{this.state.events[0].name}</h1>
-            </div>
-            <div className="card-body">
-              <h2>{this.state.events[0].content}</h2>
+    if(!this.state.events.length) {
+      return <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-title">
+                <h1></h1>
+              </div>
+              <div className="card-body">
+                <h2></h2>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    } else {
+      return <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-title">
+                <h1>{this.state.events[0].name}</h1>
+              </div>
+              <div className="card-body">
+                <h2>{this.state.events[0].content}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
   }
 }
 
