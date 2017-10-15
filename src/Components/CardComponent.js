@@ -3,61 +3,30 @@ import axios from 'axios';
 import {Button, Panel} from "react-bootstrap";
 
 class CardComponent extends Component {
-  constructor() {
-    super();
-    this.state = {
-      events: [],
-      description: '',
-      title: '',
-    };
-  }
-
-  componentWillMount() {
-    fetch('http://159.89.15.164:8000/today')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        responseJson.forEach((event) => {
-          this.state.events.push(
-            {
-              name: event.name,
-              content: event.content,
-              day: event.day,
-              month: event.month,
-              year: event.year
-            }
-          )
-        });
-        this.setState({events: this.state.events});
-      })
-      // Catch any error here
-      .catch(error => {
-        console.log(error)
-      })
-  }
 
 
   render() {
-    console.log(this.state.events);
-    if (this.state.events.length) {
+    console.log(this.props.events);
+    if (this.props.events.length) {
       return <div>
         <div className="row">
           <h1 className="page-content__date">
             <span>Dzisiejszego dnia w roku: </span>
-            <span>{this.state.events[0].year}</span>
+            <span>{this.props.events[0].year}</span>
           </h1>
           <div className="col-md-12">
             <div className="card">
               <div className="card__title">
-                <h1>{this.state.events[0].name}</h1>
+                <h1>{this.props.events[0].name}</h1>
               </div>
               <div className="card__body">
                 <article>
-                  <p>{this.state.events[0].content}</p>
+                  <p>{this.props.events[0].content}</p>
                 </article>
               </div>
               <div className="card__image">
                 <img
-                  src={this.state.events[0]}/>
+                  src={this.props.events[0]}/>
               </div>
             </div>
           </div>
